@@ -426,8 +426,8 @@ var Tagmate = (function() {
                 // Mouse menu activation
                 //menu.find("." + defaults.menu_option_class) // Doesn't work
                 $("." + defaults.menu_class + " ." + defaults.menu_option_class)
-                    .die("click.tagmate")
-                    .live("click.tagmate", function() {
+                    .off("click.tagmate")
+                    .on("click.tagmate", function() {
                         var value = $(this).text();
                         var tag = parse_tag(textarea);
                         replace_tag(textarea, tag, value);
